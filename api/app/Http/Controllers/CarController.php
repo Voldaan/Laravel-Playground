@@ -63,4 +63,15 @@ class CarController extends Controller
     {
         return Car::destroy($id);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $name
+     * @return \Illuminate\Http\Response
+     */
+    public function getByName($name)
+    {
+        return Car::where('name', 'like', '%'.$name.'%')->get();
+    }
 }

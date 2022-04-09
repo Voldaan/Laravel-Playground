@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('cars', CarController::class);
+Route::get('cars/search/{name}', [CarController::class, 'getByName']);
