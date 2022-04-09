@@ -36,7 +36,7 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+        return Car::find($id);
     }
 
     /**
@@ -48,7 +48,9 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $car = Car::find($id);
+        $car->update($request->all());
+        return $car;
     }
 
     /**
