@@ -30,6 +30,7 @@
 				},
 				{
 					"name": "Get car by ID",
+<<<<<<< HEAD
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -46,6 +47,13 @@
 						],
 						"url": {
 							"raw": "http://localhost:8000/api/cars/9",
+=======
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cars/2",
+>>>>>>> origin/main
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -54,7 +62,11 @@
 							"path": [
 								"api",
 								"cars",
+<<<<<<< HEAD
 								"9"
+=======
+								"2"
+>>>>>>> origin/main
 							]
 						}
 					},
@@ -62,6 +74,7 @@
 				},
 				{
 					"name": "Get car by name",
+<<<<<<< HEAD
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -76,6 +89,11 @@
 								"type": "default"
 							}
 						],
+=======
+					"request": {
+						"method": "GET",
+						"header": [],
+>>>>>>> origin/main
 						"url": {
 							"raw": "http://localhost:8000/api/cars/search/RX-7",
 							"protocol": "http",
@@ -95,6 +113,7 @@
 				},
 				{
 					"name": "Post car",
+<<<<<<< HEAD
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -112,6 +131,14 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"name\": \"Forester\",\r\n    \"brand\": \"Subaru\",\r\n    \"bodytype\": \"Hatchback\",\r\n    \"doors\": 4,\r\n    \"displacement\": 2.3,\r\n    \"engine_type\": \"V6\"\r\n}",
+=======
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"RX-7\",\r\n    \"brand\": \"Mazda\",\r\n    \"bodytype\": \"Coupe\",\r\n    \"doors\": 2,\r\n    \"displacement\": 2.1,\r\n    \"engine_type\": \"Wankel\"\r\n}",
+>>>>>>> origin/main
 							"options": {
 								"raw": {
 									"language": "json"
@@ -135,6 +162,7 @@
 				},
 				{
 					"name": "Put car",
+<<<<<<< HEAD
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -152,6 +180,14 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"name\": \"BRZ\",\r\n        \"brand\": \"Subaru\",\r\n        \"bodytype\": \"Hatchback\",\r\n        \"doors\": 2,\r\n        \"displacement\": \"1.20\",\r\n        \"engine_type\": \"I4\"\r\n}",
+=======
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"RX-8\",\r\n    \"brand\": \"Mazda\",\r\n    \"bodytype\": \"Coupe\",\r\n    \"doors\": 4,\r\n    \"displacement\": 1.8,\r\n    \"engine_type\": \"Wankel\"\r\n}",
+>>>>>>> origin/main
 							"options": {
 								"raw": {
 									"language": "json"
@@ -159,7 +195,11 @@
 							}
 						},
 						"url": {
+<<<<<<< HEAD
 							"raw": "http://localhost:8000/api/cars/7",
+=======
+							"raw": "http://localhost:8000/api/cars/3",
+>>>>>>> origin/main
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -168,7 +208,11 @@
 							"path": [
 								"api",
 								"cars",
+<<<<<<< HEAD
 								"7"
+=======
+								"3"
+>>>>>>> origin/main
 							]
 						}
 					},
