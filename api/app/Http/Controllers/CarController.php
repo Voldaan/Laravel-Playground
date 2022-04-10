@@ -15,7 +15,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        return Car::all();
+        return Car::OrderBy('brand', "ASC")->OrderBy('name', "ASC")->get();
     }
 
     /**
