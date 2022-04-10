@@ -47,7 +47,13 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        return Car::find($id);
+        $car = Car::find($id);
+
+        if(!$car) abort(
+            response()->json(['message' => "Couldn't find car with id $id."], 404)
+        );
+
+        return $car;
     }
 
     /**
@@ -67,6 +73,7 @@ class CarController extends Controller
             'displacement' => 'required',
             'engine_type' => 'required'
         ]);
+        
         $car = Car::find($id);
         $car->update($request->all());
         return $car;
@@ -91,6 +98,12 @@ class CarController extends Controller
      */
     public function getByName($name)
     {
-        return Car::where('name', 'like', '%'.$name.'%')->get();
+        $car = Car::where('name', 'like', '%'.$name.'%')->get();
+
+        if(!$car) abort(
+            response()->json(['message' => "Couldn't find car with name $name."], 404)
+        );
+
+        return $car;
     }
 }

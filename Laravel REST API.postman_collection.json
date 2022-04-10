@@ -30,11 +30,22 @@
 				},
 				{
 					"name": "Get car by ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8000/api/cars/2",
+							"raw": "http://localhost:8000/api/cars/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +54,7 @@
 							"path": [
 								"api",
 								"cars",
-								"2"
+								"9"
 							]
 						}
 					},
@@ -51,9 +62,20 @@
 				},
 				{
 					"name": "Get car by name",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8000/api/cars/search/RX-7",
 							"protocol": "http",
