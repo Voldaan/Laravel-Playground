@@ -25,6 +25,16 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+        //Requires the acceptance of an application/json header in the receiving application
+        $request->validate([
+            'name' => 'required|unique:cars|max:20',
+            'brand' => 'required',
+            'bodytype' => 'required',
+            'doors' => 'required',
+            'displacement' => 'required',
+            'engine_type' => 'required'
+        ]);
+
         return Car::create($request->all());
     }
 

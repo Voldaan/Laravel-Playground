@@ -73,12 +73,23 @@
 				},
 				{
 					"name": "Post car",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"RX-7\",\r\n    \"brand\": \"Mazda\",\r\n    \"bodytype\": \"Coupe\",\r\n    \"doors\": 2,\r\n    \"displacement\": 2.1,\r\n    \"engine_type\": \"Wankel\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Forester\",\r\n    \"brand\": \"Subaru\",\r\n    \"bodytype\": \"Hatchback\",\r\n    \"doors\": 4,\r\n    \"displacement\": 2.3,\r\n    \"engine_type\": \"V6\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
