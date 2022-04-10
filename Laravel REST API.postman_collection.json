@@ -113,12 +113,23 @@
 				},
 				{
 					"name": "Put car",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"RX-8\",\r\n    \"brand\": \"Mazda\",\r\n    \"bodytype\": \"Coupe\",\r\n    \"doors\": 4,\r\n    \"displacement\": 1.8,\r\n    \"engine_type\": \"Wankel\"\r\n}",
+							"raw": "{\r\n    \"name\": \"BRZ\",\r\n        \"brand\": \"Subaru\",\r\n        \"bodytype\": \"Hatchback\",\r\n        \"doors\": 2,\r\n        \"displacement\": \"1.20\",\r\n        \"engine_type\": \"I4\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -126,7 +137,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/cars/3",
+							"raw": "http://localhost:8000/api/cars/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -135,7 +146,7 @@
 							"path": [
 								"api",
 								"cars",
-								"3"
+								"7"
 							]
 						}
 					},

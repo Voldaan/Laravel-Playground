@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use Illuminate\Validation\Rule;
 
 class CarController extends Controller
 {
@@ -58,6 +59,14 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => ['required', Rule::unique('cars', 'name')->ignore($id), 'max:20'],
+            'brand' => 'required',
+            'bodytype' => 'required',
+            'doors' => 'required',
+            'displacement' => 'required',
+            'engine_type' => 'required'
+        ]);
         $car = Car::find($id);
         $car->update($request->all());
         return $car;
