@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Engines')
 @section('content')
-    <table>
+    <table class="table table-striped table-hover table-sm">
         <thead>
             <th>ID</th>
             <th>Name</th>
@@ -18,5 +18,6 @@
                 </tr>
             @endforeach
         </tbody>
+        <caption>List of engines</caption>
     </table>
 @endsection
