@@ -4,13 +4,8 @@ services:
   database:
     container_name: DB
     image: 'postgres:latest'
-
     ports:
       - 5432:5432
-
-    volumes:
-      - ./db-data/:/var/lib/postgresql/data/
-
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: secret
