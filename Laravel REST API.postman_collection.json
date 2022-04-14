@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Cars",
+			"name": "Cars v1",
 			"item": [
 				{
 					"name": "Get all cars",
@@ -212,6 +212,48 @@
 								"v1",
 								"cars",
 								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Engines v1",
+			"item": [
+				{
+					"name": "Get all engines",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/engines",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"engines"
 							]
 						}
 					},
