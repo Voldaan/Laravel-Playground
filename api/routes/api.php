@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\CarController;
+use App\Http\Controllers\v1\EngineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('v1/cars', CarController::class);
 Route::get('v1/cars/search/{name}', [CarController::class, 'getByName']);
+
+Route::resource('v1/engines', EngineController::class);
