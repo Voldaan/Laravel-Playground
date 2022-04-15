@@ -256,6 +256,11 @@
 								"key": "Accept",
 								"value": "application/json",
 								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|awTrKyWyIzVbQAzLzDYkLu6C822WdI9PlduDdwGW",
+								"type": "default"
 							}
 						],
 						"body": {
@@ -297,6 +302,11 @@
 							{
 								"key": "Accept",
 								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|awTrKyWyIzVbQAzLzDYkLu6C822WdI9PlduDdwGW",
 								"type": "default"
 							}
 						],

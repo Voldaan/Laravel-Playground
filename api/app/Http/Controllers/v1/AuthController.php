@@ -4,9 +4,9 @@ namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class AuthController extends Controller
@@ -46,7 +46,7 @@ class AuthController extends Controller
         if(!$user || !Hash::check($fields['password'], $user->password)){
             return response([
                 'message' => 'Incorrect email or password'
-            ], 401);
+            ], Response::HTTP_UNAUTHORIZED);
         }
 
         $token = $user->createToken('superSECRETkey')->plainTextToken;
@@ -56,7 +56,7 @@ class AuthController extends Controller
             'token' => $token
         ];
 
-        return response($response, 200);
+        return response($response, Response::HTTP_OK);
     }
 
     public function logout(Request $request){

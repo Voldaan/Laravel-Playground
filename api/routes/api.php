@@ -21,26 +21,33 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-$car1 = 'v1/cars';
-
 #region Public routes
+//Cars
+$car1 = 'v1/cars';
 Route::get($car1, [CarController::class, 'index']);
 Route::get("$car1/{id}", [CarController::class, 'show']);
 Route::get("$car1/search/{name}", [CarController::class, 'getByName']);
 
+//Auth
 Route::post('v1/auth/register', [AuthController::class, 'register']);
 Route::post('v1/auth/login', [AuthController::class, 'login']);
-
-Route::resource('v1/engines', EngineController::class);
-Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);
 #endregion
 
 #region Protected routes
 Route::group(['middleware' => 'auth:sanctum'], function (){
-    Route::post('v1/cars', [CarController::class, 'store']);
-    Route::post("v1/cars/{id}", [CarController::class, 'update']);
-    Route::delete("v1/cars/{id}", [CarController::class, 'destroy']);
+    //Cars
+    $car1 = 'v1/cars';
+    Route::post($car1, [CarController::class, 'store']);
+    Route::post("$car1/{id}", [CarController::class, 'update']);
+    Route::delete("$car1/{id}", [CarController::class, 'destroy']);
 
+    //Auth
     Route::post('v1/auth/logout', [AuthController::class, 'logout']);
+
+    //Engines
+    Route::resource('v1/engines', EngineController::class);
+
+    //Cars v2
+    Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);
 });
 #endregion
