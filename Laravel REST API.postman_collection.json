@@ -260,6 +260,48 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Cars v2",
+			"item": [
+				{
+					"name": "Get all cars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v2/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v2",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
