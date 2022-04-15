@@ -23,24 +23,29 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 #region Public routes
 //Cars
-$car1 = 'v1/cars';
-Route::get($car1, [CarController::class, 'index']);
-Route::get("$car1/{id}", [CarController::class, 'show']);
-Route::get("$car1/search/{name}", [CarController::class, 'getByName']);
+Route::group(['prefix' => 'v1/cars'], function(){
+    Route::get('', [CarController::class, 'index']);
+    Route::get('/{id}', [CarController::class, 'show']);
+    Route::get('/search/{name}', [CarController::class, 'getByName']);
+});
 
 //Auth
-Route::post('v1/auth/register', [AuthController::class, 'register']);
-Route::post('v1/auth/login', [AuthController::class, 'login']);
+Route::group(['prefix' => 'v1/auth'], function(){
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login', [AuthController::class, 'login']);
+});
+
 #endregion
 
 #region Protected routes
 Route::middleware('auth:sanctum')->group(function(){
     //Cars
-    $car1 = 'v1/cars';
-    Route::post($car1, [CarController::class, 'store']);
-    Route::post("$car1/{id}", [CarController::class, 'update']);
-    Route::delete("$car1/{id}", [CarController::class, 'destroy']);
-
+    Route::group(['prefix' => 'v1/cars'], function(){
+        Route::post('', [CarController::class, 'store']);
+        Route::post('/{id}', [CarController::class, 'update']);
+        Route::delete('/{id}', [CarController::class, 'destroy']);
+    });
+    
     //Auth
     Route::post('v1/auth/logout', [AuthController::class, 'logout']);
 
