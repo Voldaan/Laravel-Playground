@@ -120,11 +120,19 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|kFeBz7X3upgThjGqQdmghtgS0wtVEJ0z8ZIZJX93",
 								"type": "default"
 							}
 						],
@@ -167,6 +175,11 @@
 								"key": "Accept",
 								"value": "application/json",
 								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|kFeBz7X3upgThjGqQdmghtgS0wtVEJ0z8ZIZJX93",
+								"type": "default"
 							}
 						],
 						"body": {
@@ -199,7 +212,13 @@
 					"name": "Delete car",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|kFeBz7X3upgThjGqQdmghtgS0wtVEJ0z8ZIZJX93",
+								"type": "default"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8000/api/v1/cars/5",
 							"protocol": "http",
@@ -296,6 +315,58 @@
 								"api",
 								"v2",
 								"cars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth v1",
+			"item": [
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirmation\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"register"
 							]
 						}
 					},

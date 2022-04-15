@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\CarController;
 use App\Http\Controllers\v1\EngineController;
+use App\Http\Controllers\v1\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ $car1 = 'v1/cars';
 Route::get($car1, [CarController::class, 'index']);
 Route::get("$car1/{id}", [CarController::class, 'show']);
 Route::get("$car1/search/{name}", [CarController::class, 'getByName']);
+
+Route::post('v1/register', [AuthController::class, 'register']);
 
 Route::resource('v1/engines', EngineController::class);
 Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);
