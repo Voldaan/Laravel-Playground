@@ -29,6 +29,7 @@ Route::get("$car1/{id}", [CarController::class, 'show']);
 Route::get("$car1/search/{name}", [CarController::class, 'getByName']);
 
 Route::post('v1/auth/register', [AuthController::class, 'register']);
+Route::post('v1/auth/login', [AuthController::class, 'login']);
 
 Route::resource('v1/engines', EngineController::class);
 Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);

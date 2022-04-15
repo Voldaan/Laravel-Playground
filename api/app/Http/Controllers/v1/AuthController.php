@@ -34,6 +34,31 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
+    public function login(Request $request){
+        $fields = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string'
+        ]);
+
+        //Validate if a user with the email exists
+        $user = User::where(['email' => $fields['email']])->first();
+        //Validate if the password is correct
+        if(!$user || !Hash::check($fields['password'], $user->password)){
+            return response([
+                'message' => 'Incorrect email or password'
+            ], 401);
+        }
+
+        $token = $user->createToken('superSECRETkey')->plainTextToken;
+
+        $response = [
+            'user' => $user,
+            'token' => $token
+        ];
+
+        return response($response, 200);
+    }
+
     public function logout(Request $request){
         auth()->user()->tokens()->delete();
 
