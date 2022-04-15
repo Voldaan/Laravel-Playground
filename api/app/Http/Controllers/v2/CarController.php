@@ -15,9 +15,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        // $car = CarV2::OrderBy('brand', "ASC")->OrderBy('name', "ASC")->get();
-        $car = CarV2::find('3')->getEngine;
-        return $car;
+        return CarV2::with('engine')->OrderBy('brand', "ASC")->OrderBy('name', "ASC")->get();
     }
 
     /**
