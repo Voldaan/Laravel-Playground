@@ -20,9 +20,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('v1/cars', CarController::class);
-Route::get('v1/cars/search/{name}', [CarController::class, 'getByName']);
+$car1 = 'v1/cars';
+
+#region Public routes
+Route::get($car1, [CarController::class, 'index']);
+Route::get("$car1/{id}", [CarController::class, 'show']);
+Route::get("$car1/search/{name}", [CarController::class, 'getByName']);
 
 Route::resource('v1/engines', EngineController::class);
-
 Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);
+#endregion
+
+#region Protected routes
+Route::group(['middleware' => 'auth:sanctum'], function (){
+    Route::post('v1/cars', [CarController::class, 'store']);
+    Route::post("v1/cars/{id}", [CarController::class, 'update']);
+    Route::delete("v1/cars/{id}", [CarController::class, 'destroy']);
+});
+#endregion
