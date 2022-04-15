@@ -24,14 +24,7 @@ class AuthController extends Controller
             'password' => bcrypt($fields['password'])
         ]);
 
-        $token = $user->createToken('superSECRETkey')->plainTextToken;
-
-        $response = [
-            'user' => $user,
-            'token' => $token
-        ];
-
-        return response($response, 201);
+        return response($user, Response::HTTP_CREATED);
     }
 
     public function login(Request $request){
@@ -62,8 +55,8 @@ class AuthController extends Controller
     public function logout(Request $request){
         auth()->user()->tokens()->delete();
 
-        return [
+        return response([
             'message' => 'Logged out'
-        ];
+        ], Response::HTTP_OK);
     }
 }
