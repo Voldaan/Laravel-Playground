@@ -34,7 +34,7 @@ Route::post('v1/auth/login', [AuthController::class, 'login']);
 #endregion
 
 #region Protected routes
-Route::group(['middleware' => 'auth:sanctum'], function (){
+Route::middleware('auth:sanctum')->group(function(){
     //Cars
     $car1 = 'v1/cars';
     Route::post($car1, [CarController::class, 'store']);
