@@ -15,7 +15,7 @@ class CarV2Seeder extends Seeder
      */
     public function run()
     {
-        DB::table('cars_v2')->insert([
+        DB::table('car_v2_s')->insert([
             [
                 'name' => 'Impreza',
                 'brand' => 'Subaru',
@@ -24,18 +24,18 @@ class CarV2Seeder extends Seeder
                 'engine_id' => 1
             ],
             [
-                'name' => 'Toyota',
-                'brand' => 'Supra',
-                'bodytype' => 'Coupe',
-                'doors' => 2,
-                'engine_id' => 2
-            ],
-            [
                 'name' => 'Civic Type-R',
                 'brand' => 'Honda',
                 'bodytype' => 'Hatchback',
                 'doors' => 2,
                 'engine_id' => 3
+            ],
+            [
+                'name' => 'Toyota',
+                'brand' => 'Supra',
+                'bodytype' => 'Coupe',
+                'doors' => 2,
+                'engine_id' => 2
             ]
         ]
         );

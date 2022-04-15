@@ -15,4 +15,9 @@ class CarV2 extends Model
         'doors',
         'engine_id'
     ];
+
+    public function getEngine(){
+        //Foreign.model, Foreign.id, Model.foreign-key
+        return $this->hasOne(Engine::class, 'id', 'engine_id');
+    }
 }

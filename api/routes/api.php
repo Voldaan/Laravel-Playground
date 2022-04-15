@@ -24,3 +24,5 @@ Route::resource('v1/cars', CarController::class);
 Route::get('v1/cars/search/{name}', [CarController::class, 'getByName']);
 
 Route::resource('v1/engines', EngineController::class);
+
+Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);
