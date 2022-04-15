@@ -28,7 +28,7 @@ Route::get($car1, [CarController::class, 'index']);
 Route::get("$car1/{id}", [CarController::class, 'show']);
 Route::get("$car1/search/{name}", [CarController::class, 'getByName']);
 
-Route::post('v1/register', [AuthController::class, 'register']);
+Route::post('v1/auth/register', [AuthController::class, 'register']);
 
 Route::resource('v1/engines', EngineController::class);
 Route::get('v2/cars', [App\Http\Controllers\v2\CarController::class, 'index']);
@@ -39,5 +39,7 @@ Route::group(['middleware' => 'auth:sanctum'], function (){
     Route::post('v1/cars', [CarController::class, 'store']);
     Route::post("v1/cars/{id}", [CarController::class, 'update']);
     Route::delete("v1/cars/{id}", [CarController::class, 'destroy']);
+
+    Route::post('v1/auth/logout', [AuthController::class, 'logout']);
 });
 #endregion
