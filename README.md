@@ -32,3 +32,9 @@ Using the application can be done by running:
 php artisan serve
 ```
 And then clicking the link in the console. This'll lead you to a page where the key can be generated before you can access the api endpoints.
+
+To login with the seeded account, use the following information:
+```
+"email": "admin@test.com",
+"password": "password"
+```
