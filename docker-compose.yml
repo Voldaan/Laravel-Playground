@@ -11,10 +11,10 @@ services:
       POSTGRES_PASSWORD: secret
       POSTGRES_DB: CarDB
 
-  api:
-    container_name: API
-    build: api
-    ports:
-        - 8000:8000
-    depends_on:
-        - database
+  # api:
+  #   container_name: API
+  #   build: api
+  #   ports:
+  #       - 8000:8000
+  #   depends_on:
+  #       - database

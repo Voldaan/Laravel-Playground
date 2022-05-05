@@ -4,14 +4,20 @@
 
 First, clone the repository to your local machine:
 ```
-git clone https://github.com/Voldaan/Laravel-REST-API.git
+git clone https://github.com/Voldaan/Laravel-Playground.git
 ```
-Next up, create a .env file and past the data from .env-example into it.
-After which you'll want to install all dependencies needed to run the application. This can be done by running the following command in the root of the project:
+Install all dependencies needed to run the application. This can be done by running the following command in the folder where `composer.json` and `composer.lock` are located. In our case, this is the `api` folder:
 ```
 composer install
 ```
-While we're
+
+While the dependencies are being installed, create an `.env` file and paste the data from `.env-example` into it.
+
+While we're in the folder for our Laravel project, you want to generate your application encryption key using:
+```
+php artisan key:generate
+```
+
 After which you can run the docker compose script in the root of the project to initialize the database:
 ```
 docker-compose up
@@ -31,7 +37,7 @@ Using the application can be done by running:
 ```
 php artisan serve
 ```
-And then clicking the link in the console. This'll lead you to a page where the key can be generated before you can access the api endpoints.
+The link in the console will open up the standard view endpoint.
 
 To login with the seeded account, use the following information:
 ```
